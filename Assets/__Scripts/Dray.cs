@@ -82,14 +82,16 @@ public class Dray : MonoBehaviour {
 				anim.CrossFade ("Dray_Walk_" + facing, 0);
 				anim.speed = 0;
 				break;
-			case eMode.move:
+		case eMode.move:
 				vel = directions [dirHeld];
 				anim.CrossFade ("Dray_Walk_" + facing, 0);
+				print ("Facing: " + facing);
 				anim.speed = 1;
 				break;
 		}
 		rigid.velocity = vel * speed;
 	}
+
 
 	// Play appropriate animation
 	void PlayAnimation ()
@@ -129,7 +131,7 @@ public class Dray : MonoBehaviour {
 
 	}
 
-	// My own custom move function that allows for diagonal movement
+	// My own custom move function that allows for diagonal movement not set up to work with other functionality yet
 	void Movement ()
 	{
 		// xMove and yMove will always have a value between -1 and 1
